@@ -8,6 +8,8 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
 import java.net.URISyntaxException;
 import java.nio.file.Paths;
@@ -32,6 +34,7 @@ public abstract class BaseTest {
                 System.setProperty(
                         "webdriver.gecko.driver",
                         getResource("/geckodriver.exe"));
+ //               System.setProperty("webdriver.gecko.driver", MainClass.class.getResource("geckodriver.exe").getPath());
                 return new FirefoxDriver();
             case "ie":
             case "internet explorer":
@@ -69,6 +72,7 @@ public abstract class BaseTest {
      *
      */
     @BeforeClass
+    @Parameters({"selenium.browser"})
     // TODO use parameters from pom.xml to pass required browser type
     public void setUp(String browser ) {
         driver = new EventFiringWebDriver(getDriver(browser));
