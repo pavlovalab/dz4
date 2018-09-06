@@ -1,32 +1,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="Products Management" verbose="1" >
-    <test name="Create New Product [ie]" >
-        <parameter name="selenium.browser" value="ie" />
-        <parameter name="selenium.login" value="webinar.test@gmail.com" />
-        <parameter name="selenium.password" value="Xcg7299bnSmMuRLp9ITw" />
-        <classes>
-            <class name="myprojects.automation.assignment4.tests.CreateProductTest" />
-        </classes>
-    </test>
-
     <test name="Create New Product [firefox]" >
         <parameter name="selenium.browser" value="firefox" />
-        <parameter name="selenium.login" value="webinar.test@gmail.com" />
-        <parameter name="selenium.password" value="Xcg7299bnSmMuRLp9ITw" />
         <classes>
             <class name="myprojects.automation.assignment4.tests.CreateProductTest" />
         </classes>
     </test>
 
-    <test name="Create New Product [Chrome]" >
-        <parameter name="selenium.browser" value="chrome" />
-        <parameter name="selenium.login" value="webinar.test@gmail.com" />
-        <parameter name="selenium.password" value="Xcg7299bnSmMuRLp9ITw" />
-        <classes>
-            <class name="myprojects.automation.assignment4.tests.CreateProductTest" />
-        </classes>
-    </test>
 
     <!--Prepare test for firefox and IE browsers-->
 

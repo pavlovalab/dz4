@@ -38,7 +38,7 @@ public class ProductData {
     public static ProductData generate() {
         Random random = new Random();
         return new ProductData(
-                "New Product " + System.currentTimeMillis(),
+                "Fruit " + System.currentTimeMillis(),
                 random.nextInt(100) + 1,
                 (float) Math.round(random.nextInt(100_00) + 1) / 100);
     }
