@@ -54,6 +54,7 @@ public class GeneralActions {
 
         CustomReporter.log("Авторизация");
 
+        driver.findElement(By.id("email")).sendKeys(Keys.BACK_SPACE);
         driver.findElement(By.id("email")).sendKeys(login);
         driver.findElement(By.id("passwd")).sendKeys(password);
         driver.findElement(By.name("submitLogin")).submit();
@@ -94,6 +95,7 @@ public class GeneralActions {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("main-div")));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("form_step1_name_1")));
 
+        driver.findElement(By.cssSelector("#form_step1_name_1")).sendKeys(Keys.BACK_SPACE);
         driver.findElement(By.cssSelector("#form_step1_name_1")).sendKeys(newProduct.getName());
         driver.findElement(By.cssSelector("#form_step1_qty_0_shortcut")).sendKeys(newProduct.getQty().toString());
         driver.findElement(By.cssSelector("#form_step1_price_ttc_shortcut")).sendKeys(newProduct.getPrice());
