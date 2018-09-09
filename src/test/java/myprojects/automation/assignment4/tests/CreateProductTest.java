@@ -23,8 +23,6 @@ public class CreateProductTest extends BaseTest {
         actions.createProduct(product);
 
         actions.checkProduct(product);
-        Thread.sleep(10000);
-        // ...
     }
 
     // TODO implement logic to check product visibility on website

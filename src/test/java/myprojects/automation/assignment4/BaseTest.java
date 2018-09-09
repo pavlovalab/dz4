@@ -47,6 +47,7 @@ public abstract class BaseTest {
                 options.setCapability(InternetExplorerDriver.REQUIRE_WINDOW_FOCUS, true);
                 options.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true);
                 options.setCapability(InternetExplorerDriver.IE_ENSURE_CLEAN_SESSION,true);
+                options.setCapability(InternetExplorerDriver.IGNORE_ZOOM_SETTING,true);
                 return new InternetExplorerDriver(options);
             case "chrome":
             default:

@@ -1,8 +1,20 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="Products Management" verbose="1" >
+    <test name="Create New Product [ie]" >
+        <parameter name="selenium.browser" value="ie" />
+        <classes>
+            <class name="myprojects.automation.assignment4.tests.CreateProductTest" />
+        </classes>
+    </test>
     <test name="Create New Product [firefox]" >
         <parameter name="selenium.browser" value="firefox" />
+        <classes>
+            <class name="myprojects.automation.assignment4.tests.CreateProductTest" />
+        </classes>
+    </test>
+    <test name="Create New Product [chrome]" >
+        <parameter name="selenium.browser" value="chrome" />
         <classes>
             <class name="myprojects.automation.assignment4.tests.CreateProductTest" />
         </classes>
