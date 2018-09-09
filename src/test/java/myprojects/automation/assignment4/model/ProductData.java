@@ -31,6 +31,11 @@ public class ProductData {
         separators.setDecimalSeparator(',');
         return new DecimalFormat("#0.00", separators).format(price);
     }
+    public String getPriceInt() {
+        DecimalFormatSymbols separators = new DecimalFormatSymbols();
+        separators.setDecimalSeparator('.');
+        return new DecimalFormat("#0.00", separators).format(price);
+    }
 
     /**
      * @return New Product object with random name, quantity and price values.

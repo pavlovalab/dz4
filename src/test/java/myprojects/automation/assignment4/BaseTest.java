@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -41,7 +42,12 @@ public abstract class BaseTest {
                 System.setProperty(
                         "webdriver.ie.driver",
                         getResource("/IEDriverServer.exe"));
-                return new InternetExplorerDriver();
+                InternetExplorerOptions options = new InternetExplorerOptions();
+                options.setCapability(InternetExplorerDriver.NATIVE_EVENTS, true);
+                options.setCapability(InternetExplorerDriver.REQUIRE_WINDOW_FOCUS, true);
+                options.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true);
+                options.setCapability(InternetExplorerDriver.IE_ENSURE_CLEAN_SESSION,true);
+                return new InternetExplorerDriver(options);
             case "chrome":
             default:
                 System.setProperty(
@@ -82,7 +88,7 @@ public abstract class BaseTest {
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();
 
-        actions = new GeneralActions(driver);
+        actions = new GeneralActions(driver, browser);
     }
 
     /**
